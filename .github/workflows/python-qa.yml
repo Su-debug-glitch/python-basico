@@ -1,0 +1,35 @@
+name: Revisión de Código Python (QA)
+
+# Cuándo se ejecuta: cada vez que hagas un push a la rama 'main'
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  analisis:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Descarga el código de tu repositorio en el servidor de GitHub
+    - name: Clonar el repositorio
+      uses: actions/checkout@v4
+
+    # 2. Configura el entorno virtual con Python
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+
+    # 3. Instala 'flake8', la herramienta que revisa el código
+    - name: Instalar herramientas de calidad (Linter)
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+
+    # 4. Ejecuta la revisión
+    - name: Analizar código con flake8
+      run: |
+        # Detiene la ejecución si hay errores de sintaxis de Python
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Avisa si hay fallos de estilo o formato (sin romper la subida)
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
