@@ -47,7 +47,7 @@ while contador < 5:
 else:
     print("El bucle ha terminado")
 
-# EJEMPLO: 
+# EJEMPLO extra (no lo explica midudev): 
 # Imagina que estás programando un sistema de inicio de sesión 
 # donde el usuario tiene un número limitado de intentos. 
 # Puedes usar el bloque else para mostrar un mensaje de bloqueo 
