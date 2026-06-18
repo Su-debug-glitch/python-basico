@@ -8,7 +8,7 @@ El objetivo es aprender la sintaxis desde el "Hola Mundo" hasta conceptos más a
 
 ## 📺 El Curso
 * **Vídeo en YouTube:** [Curso Completo de Python desde Cero](https://www.youtube.com/watch?v=TkN2i-_4N4g)
-* **Repositorio oficial de Miguel:** [midudev/cursopython](https://github.com/midudev/cursopython)
+* **Repositorio oficial de Miguel:** [midudev/curso-python](https://github.com/midudev/curso-python)
 
 ---
 
