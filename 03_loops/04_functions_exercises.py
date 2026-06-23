@@ -28,6 +28,3 @@ def calcular_media(lista_numeros):
     print(f"La media es: {media}")
 
 calcular_media(numeros)
-
-
-
