@@ -50,7 +50,7 @@ except requests.exceptions.RequestException as e:
 # Ref: https://platform.openai.com/docs/api-reference/making-requests
 # solo como prueba, no funciona porque no lo estoy pagando
 
-OPENAI_KEY = "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"
+OPENAI_KEY = "sk-XXX"
 
 def call_openai_gpt(api_key, prompt):
     url = "https://api.openai.com/v1/chat/completions"
