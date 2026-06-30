@@ -14,6 +14,7 @@ except urllib.error.URLError as e:
     print(f"Error en la solicitid: {e}")
 
 # Con dependencia (requests)
+import os
 import requests
 print("\nGET:")
 response = requests.get(api_posts)
@@ -50,9 +51,13 @@ except requests.exceptions.RequestException as e:
 # Ref: https://platform.openai.com/docs/api-reference/making-requests
 # solo como prueba, no funciona porque no lo estoy pagando
 
-OPENAI_KEY = "sk-XXX"
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 
 def call_openai_gpt(api_key, prompt):
+    if not api_key:
+        print("Error: No se ha configurado la API Key.")
+        return None
+    
     url = "https://api.openai.com/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
